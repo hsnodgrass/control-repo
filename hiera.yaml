@@ -5,13 +5,10 @@ defaults:
   datadir: "data"
 
 hierarchy:
-  - name: "Yaml backend"
-    data_hash: yaml_data
-    paths:
+  - name: "eyaml-enabled"
+    paths: 
       - "nodes/%{trusted.certname}.yaml"
       - "common.yaml"
-  - name: "Per-Node Secrets"
-    path: "nodes/%{trusted.certname}.eyaml"
     lookup_key: eyaml_lookup_key
     options:
       pkcs7_private_key: /etc/puppetlabs/puppet/eyaml/private_key.pkcs7.pem
